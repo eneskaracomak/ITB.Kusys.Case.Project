@@ -1,0 +1,33 @@
+﻿@using ITB.Kusys.Cse.Project.Entities.Dto;
+@model List<StudentViewModel>
+@{
+    ViewData["Title"] = "Student Course List";
+    Layout = "_Layout";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">      
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>İsim</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var studentViewModel in Model)
+                        {
+                            foreach (var item in studentViewModel.CourseName)
+                            {
+                                 <tr>
+                                    <td class="text-nowrap">@item</td>
+                            </tr>
+                            }      
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
